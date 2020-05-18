@@ -14,15 +14,25 @@ We will assume that we are given:
 The approach of the finite volume method is to divide the state space, $X$ into cells and keep track of the average volume in each cell. When we solve the advection equation we will ensure that, aside from leakage at the boundaries of $X$, the volume of the probability density will be conserved. Additionally this numerical method used is monotonic, meaning it will not introduce oscillations as a result of the state space/time discretization. These two properties make the finite volume method attractive compared to other numerical methods used to solve partial differential equations.
 
 We will use the following notation 
+
 $x\in X\subset \mathbb{R}^d$ state space of robot, dimension d.
+
 $f:X\to \mathbb{R}^d$ dynamics of trajectory we want to verify
+
 $Q$ vector containing the average value of the density in each cell
+
 $n$ time step number
+
 $\Delta t$ time step length
+
 $T$ time horizon
+
 $\Delta x_j$ width of cell in dimension $j\in\{1,...,d\}$
+
 $\bar{u}_{j,i-1/2}$ the average velocity at the left border of a cell $i$ in dimension $j$
+
 $\phi:\mathbb{R}\to\mathbb{R}$ a flux limiter function (we use van leer presently, will be updated to include more)
+
 
 Let $Q^n$ be the cell averages at time step $n$. To compute the cell averages at time step $n+1$ we use the following algorithm
 
