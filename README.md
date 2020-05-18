@@ -20,5 +20,17 @@ We will use the following notation
 <img src="/tex/2f118ee06d05f3c2d98361d9c30e38ce.svg?invert_in_darkmode&sanitize=true" align=middle width=11.889314249999991pt height=22.465723500000017pt/> time horizon
 <img src="/tex/16fcdc2e4358a7f49fe2a486169a4238.svg?invert_in_darkmode&sanitize=true" align=middle width=29.198168999999993pt height=22.465723500000017pt/> width of cell in dimension <img src="/tex/941fed4982cce9d21aff5f034342c257.svg?invert_in_darkmode&sanitize=true" align=middle width=89.32558634999998pt height=24.65753399999998pt/>
 <img src="/tex/02c8ac95474dd12996d5f96a5fb083fd.svg?invert_in_darkmode&sanitize=true" align=middle width=53.47633664999999pt height=18.666631500000015pt/> the average velocity at the left border of a cell <img src="/tex/77a3b857d53fb44e33b53e4c8b68351a.svg?invert_in_darkmode&sanitize=true" align=middle width=5.663225699999989pt height=21.68300969999999pt/> in dimension <img src="/tex/36b5afebdba34564d884d347484ac0c7.svg?invert_in_darkmode&sanitize=true" align=middle width=7.710416999999989pt height=21.68300969999999pt/>
-<img src="/tex/6cf3c7864d3d909d328c1285f1f5a052.svg?invert_in_darkmode&sanitize=true" align=middle width=72.8079231pt height=22.831056599999986pt/> a flux limiter function (we use van leer presently, will be updated to include more)<img src="/tex/65c4b3e1ba32c4a342c685939841b093.svg?invert_in_darkmode&sanitize=true" align=middle width=13.698671249999997pt height=39.45205439999997pt/>Q^n<img src="/tex/6ecb508a3ebf22e11eb116ac396d52fe.svg?invert_in_darkmode&sanitize=true" align=middle width=206.12622854999998pt height=22.831056599999986pt/>n<img src="/tex/ddc5a60205d7ad91714c9e7b64bf9c75.svg?invert_in_darkmode&sanitize=true" align=middle width=276.62691044999997pt height=22.831056599999986pt/>n+1<img src="/tex/f9c0181ec76806a4c3e533de7a007106.svg?invert_in_darkmode&sanitize=true" align=middle width=216.96648599999995pt height=39.45205440000001pt/>j = 1:d<img src="/tex/a32c067ad9773da79fd8b9b33884f525.svg?invert_in_darkmode&sanitize=true" align=middle width=668.3104956pt height=730.9995329999999pt/>\sum_i Q_i^n \int g(x_i,x_o)p(x_o|t^n)dx dx_o$
+<img src="/tex/6cf3c7864d3d909d328c1285f1f5a052.svg?invert_in_darkmode&sanitize=true" align=middle width=72.8079231pt height=22.831056599999986pt/> a flux limiter function (we use van leer presently, will be updated to include more)
+
+Let <img src="/tex/87c836923d5a3399b76cae2a1dac8b49.svg?invert_in_darkmode&sanitize=true" align=middle width=21.121448699999988pt height=22.465723500000017pt/> be the cell averages at time step <img src="/tex/55a049b8f161ae7cfeb0197d75aff967.svg?invert_in_darkmode&sanitize=true" align=middle width=9.86687624999999pt height=14.15524440000002pt/>. To compute the cell averages at time step <img src="/tex/3f18d8f60c110e865571bba5ba67dcc6.svg?invert_in_darkmode&sanitize=true" align=middle width=38.17727759999999pt height=21.18721440000001pt/> we use the following algorithm
+
+for <img src="/tex/695e0ecd9088c76cddd0f52dc4a1151a.svg?invert_in_darkmode&sanitize=true" align=middle width=60.101642699999985pt height=22.831056599999986pt/>
+	
+<p align="center"><img src="/tex/95b73caad661823868db97c2605573db.svg?invert_in_darkmode&sanitize=true" align=middle width=548.80663365pt height=269.51802734999995pt/></p>
+	
+	
+end
+
+Then, at each timestep, we can evaluate the risk function on each cell and sum across all cells
+<img src="/tex/215eefb9fd2bbd9546d3a472f3d852f5.svg?invert_in_darkmode&sanitize=true" align=middle width=223.6428975pt height=26.48417309999999pt/>
 
