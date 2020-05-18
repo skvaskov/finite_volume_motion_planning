@@ -44,3 +44,5 @@ end
 Then, at each timestep, we can evaluate the risk function on each cell and sum across all cells
 <img src="/tex/215eefb9fd2bbd9546d3a472f3d852f5.svg?invert_in_darkmode&sanitize=true" align=middle width=223.6428975pt height=26.48417309999999pt/>
 
+Note that some of the examples in this repository use gaussian representations of obstacles and require the matlab package ftnorm to evaluate the moments, which can be found at:
+https://www.tandfonline.com/doi/suppl/10.1080/10618600.2017.1322092
