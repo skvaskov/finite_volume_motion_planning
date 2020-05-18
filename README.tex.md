@@ -22,7 +22,7 @@ $\Delta t$ time step length
 $T$ time horizon
 $\Delta x_j$ width of cell in dimension $j\in\{1,...,d\}$
 $\bar{u}_{j,i-1/2}$ the average velocity at the left border of a cell $i$ in dimension $j$
-$\phi:\mathbb{R}\to\mathbb{R}$ a flux limiter function (we use van leer presently, will be updated to include more)$
+$\phi:\mathbb{R}\to\mathbb{R}$ a flux limiter function (we use van leer presently, will be updated to include more)
 
 Let $Q^n$ be the cell averages at time step $n$. To compute the cell averages at time step $n+1$ we use the following algorithm
 
