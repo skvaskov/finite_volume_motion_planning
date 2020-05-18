@@ -56,3 +56,5 @@ end
 Then, at each timestep, we can evaluate the risk function on each cell and sum across all cells
 $\sum_i Q_i^n \int g(x_i,x_o)p(x_o|t^n)dx dx_o$
 
+Note that some of the examples in this repository use gaussian representations of obstacles and require the matlab package ftnorm to evaluate the moments, which can be found at:
+https://www.tandfonline.com/doi/suppl/10.1080/10618600.2017.1322092
