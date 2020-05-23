@@ -1,6 +1,15 @@
+%inputs Q: 1xNtimestep cell array. Each cell contains prod(m)x1 vector with grid values at each cell
+        %dproj vector containing the dimensions you want to project onto
+        %m: dx1 number of grid cells in each dimension
+        %grid_lower(upper)_bounds: dx1 lower (upper) limit of grid in each dimenstion
+        %assume the grid is rectangular with uniform spacing
+        
+%outputs: Qproj: 1xNtimestep cell array. Each cell contains prod(m(dproj))x1 vector with grid values at each cell
+
+%written by Sean Vaskov on May 11th, 2020
+
 function Qproj = project_onto_dimension(Q,dproj,m,grid_lower_bounds,grid_upper_bounds)
-%UNTITLED3 Summary of this function goes here
-%   Detailed explanation goes here
+
 d = length(m);
 
 other_idxs = ~ismember((1:d),dproj);

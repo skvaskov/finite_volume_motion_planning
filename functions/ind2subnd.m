@@ -1,3 +1,10 @@
+%input: SZ: 1xd array contining the matrix size
+%        i: double containing the index (position in column vector)
+%output: sub_i: 1xd array containing the position in each dimension for the
+%        cell indexed by i
+
+%Created by Sean Vaskov on March 4th, 2020
+
 function sub_i = ind2subnd(SZ,i)
 
 %transpose if mutliple entries and given vertically

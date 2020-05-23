@@ -3,7 +3,9 @@
         %grid_lower_bounds: lower limit of grid in each dimenstion
         %assume the grid is rectangular with uniform spacing
         
-%outputs: x_out: Nxd grid point corresponding to cell center     
+%outputs: x_out: Nxd grid point corresponding to cell center 
+
+%created by Sean Vaskov on May 17th, 2020   
 
 function x_out = sub_to_x_val(sub_in,h,grid_lower_bounds)
 

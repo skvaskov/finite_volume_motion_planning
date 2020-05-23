@@ -1,6 +1,13 @@
+%input: m: 1xd array containing the number of cells in each axis
+%       ubar: 1xd cell array. each cell contains a (m(d)+1)prod(m(~=d)) x d
+%       vector containing the velocity at the i-1/2 cell interface
+        
+%outputs: [UP,DQI,DQi,DF] matrices that are used int fvm_advection function
+
+%written by Sean Vaskov on May 16th, 2020
+
 function [UP,DQI,DQi,DF] = build_matrices_for_fvm_advection(ubar,m)
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
+
 d = length(ubar);
 
 UP = cell(d,1);

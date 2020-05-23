@@ -1,3 +1,15 @@
+%input: Q: 1xNtimestep cell array. Each cell contains a prod(m)x1 array
+%          containing the cell values 
+%       m: 1xd vector with the number of cells in each dimension
+%       grid_lower(upper)_bounds: 1xd lower (upper) bound of state space in each dimension
+        
+%outputs: meanQ: Ntimestep x d array containing the average value in each
+%                dimension at each timestep
+%         StdQ: Ntimestep x d array containing the standard deviation in each
+%                dimension at each timestep
+
+%written by Sean Vaskov on May 15th, 2020
+
 function [meanQ,stdQ] = compute_mean_and_stddev(Q,m,grid_lower_bounds,grid_upper_bounds)
 d = length(m);
 
@@ -21,24 +33,3 @@ end
 
 
 end
-
-% function [meanQ,stdQ] = compute_mean_and_stddev(Q,d,m)
-% 
-% x = linspace(0,1,m+1);
-% 
-% h = 1/m;
-% 
-% sub_i = ind2subnd(m*ones(1,d),1:m^d);
-% 
-% xgrid = x(sub_i)+h/2;
-% 
-% meanQ = NaN(length(Q),d);
-% stdQ = NaN(length(Q),d);
-% 
-% for i = 1:d
-% meanQ(:,i) = sum(repmat(((xgrid(:,i)+h/2).^2/2-(xgrid(:,i)-h/2).^2/2),[1 length(Q)]).*cat(2,Q{:})*h^(d-1))';
-% stdQ(:,i) = sqrt(sum(repmat(((xgrid(:,i)+h/2).^3/3-(xgrid(:,i)-h/2).^3/3),[1 length(Q)]).*cat(2,Q{:})*h^(d-1))'-meanQ(:,i).^2);
-% end
-% 
-% 
-% end

@@ -5,6 +5,8 @@
         
 %outputs: sub_out: Nxd indexs of grid cells in each dimension      
 
+%created by Sean Vaskov on My 15th, 2020
+
 function sub_out = x_val_to_sub(x,h,grid_lower_bounds)
 
 N = size(x,1);

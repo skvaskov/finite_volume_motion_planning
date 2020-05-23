@@ -1,5 +1,10 @@
 %input: m: 1xd vector with the number of cells in each dimension
 %       grid_lower(upper)_bounds: 1xd lower (upper) bound of state space in each dimension
+        
+%outputs: xgrid: prod(m) x d double containing the center coordinate of
+%each cell
+
+%written by Sean Vaskov on May 16th, 2020
 
 function xgrid = get_grid_points(m,grid_lower_bounds,grid_upper_bounds)
 d = length(m);
