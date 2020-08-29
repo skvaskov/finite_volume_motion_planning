@@ -17,9 +17,6 @@ other_idxs = ~ismember((1:d),dproj);
 h = (grid_upper_bounds-grid_lower_bounds)./m;
 
 
-Qproj = cell(size(Q));
-
-
 szproj = m(dproj);
 
 sub_i = ind2subnd(m,1:prod(m));
@@ -27,12 +24,21 @@ idx = sub2indnd(szproj,sub_i(:,dproj));
 
 ProjMat = sparse(idx,1:prod(m),prod(h(other_idxs)),prod(m(dproj)),prod(m));
 
+if iscell(Q)
+Qproj = cell(size(Q));
 for n = 1:length(Q)
     
     
     Qproj{n} = ProjMat*Q{n};
     
     
+end
+
+else
+    Qproj = NaN(size(ProjMat,1),size(Q,2));
+    for n = 1:size(Q,2)
+    Qproj(:,end) = ProjMat*Q(:,n);
+    end
 end
 
 
