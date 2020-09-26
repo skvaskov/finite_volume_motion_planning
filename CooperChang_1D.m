@@ -2,7 +2,7 @@ clear
 close
 
 %velocity and yawrate
-u = 10;
+u = 10+2*(rand-0.5);
 
 %time horizon
 T = 2;
@@ -11,7 +11,7 @@ Tvec = 0:ts:T;
 Nsteps = length(Tvec)-1;
 
 %initial condition
-mu0 = 4;
+mu0 = 16;
 S0 = 1;
 d = 1;
 
